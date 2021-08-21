@@ -1,28 +1,17 @@
 
+// string conversion function
+function convertString(text) {
+    const mainText = document.getElementById(text).innerText;
+    const convertedText = parseFloat(mainText);
+    return convertedText;
+};
+
 // total price calculation
-function totalPrice() {
-
-    // main price conversion
-    const bestPrice = document.getElementById('best-price').innerText;
-    const bestPriceConvert = parseFloat(bestPrice);
-
-    // memory price conversion
-    const memoryPrice = document.getElementById('memory-field').innerText;
-    const memoryPriceConvert = parseFloat(memoryPrice);
-
-    // storage price conversion
-    const storagePrice = document.getElementById('storage-field').innerText;
-    const storagePriceConvert = parseFloat(storagePrice);
-
-    // delivery price conversion
-    const deliveryPrice = document.getElementById('delivery-field').innerText;
-    const deliveryPriceConvert = parseFloat(deliveryPrice);
-
-    // final output
-    const finalPrice = bestPriceConvert + memoryPriceConvert + storagePriceConvert + deliveryPriceConvert;
+function totalPrice(bestprice, memory, storage, delivery) {
+    const finalPrice = bestprice + memory + storage + delivery;
     document.getElementById('total-price').innerText = finalPrice;
     document.getElementById('final-total').innerText = finalPrice;
-};
+}
 
 // coupon calculatin
 function couponCode() {
@@ -42,40 +31,68 @@ document.getElementById('buttons').addEventListener('click', function (events) {
     if (events.target.innerText == '8GB unified memory') {
         const memoryField = document.getElementById('memory-field');
         memoryField.innerText = 0;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
     else if (events.target.innerText == '16GB unified memory') {
         const memoryField = document.getElementById('memory-field');
         memoryField.innerText = 180;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
 
     // storage button events
     else if (events.target.innerText == '256GB SSD storage') {
         const storageField = document.getElementById('storage-field');
         storageField.innerText = 0;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
     else if (events.target.innerText == '512GB SSD storage') {
         const storageField = document.getElementById('storage-field');
         storageField.innerText = 100;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
     else if (events.target.innerText == '1TB SSD storage') {
         const storageField = document.getElementById('storage-field');
         storageField.innerText = 180;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
 
     // delivery button events
     else if (events.target.innerText == 'Friday, Aug 25 FREE Prime delivery') {
         const storageField = document.getElementById('delivery-field');
         storageField.innerText = 0;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
     else if (events.target.innerText == 'Friday, Aug 21 delivery charge $20') {
         const storageField = document.getElementById('delivery-field');
         storageField.innerText = 20;
-        totalPrice();
+        const bestPrice = convertString('best-price');
+        const memoryPrice = convertString('memory-field');
+        const storagePrice = convertString('storage-field');
+        const deliveryPrice = convertString('delivery-field');
+        totalPrice(bestPrice, memoryPrice, storagePrice, deliveryPrice);
     }
 });
